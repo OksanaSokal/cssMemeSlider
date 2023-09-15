@@ -3,31 +3,60 @@
   padding: 0;
 }
 
-.container {
-  max-width: 68.75rem;
-  background-color: rgba(218, 223, 225, 0.7);
-  margin: 0 auto;
+body {
+  background-color: rgba(8, 8, 8, 0.84);
+  font-family: sans-serif;
+  font-weight: 700;
 }
 
+.container {
+  /* max-width: 68.75rem; */
+  max-width: 80%;
+  max-height: 90vh;
+  /* max-height: 50rem; */
+  background-color: rgba(218, 223, 225, 0.7);
+  margin: 0 auto;
+  /* margin-top: 4vh; */
+  margin-bottom: 4vh;
+  border-radius: 0.625rem;
+}
+
+input {
+  display: none;
+}
 .slider {
-  max-width: 37.5rem;
-  min-height: 45rem;
+  /* max-width: 37.5rem; */
+  max-width: 60%;
+  max-height: 70vh;
+  /* max-height: 37.5rem; */
   overflow: hidden;
+  margin: 0 auto;
+  /* padding-top: 3%; */
+  background-color: white;
+  border-radius: 0.75rem;
+  margin-top: 1.25rem;
 }
 
 .slides {
   display: flex;
   width: 400%;
+  max-height: 70vh;
+  /* max-height: 37.5rem; */
 }
 
 .slide {
   width: 25%;
   transition: all 0.6s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slide img {
   max-width: 100%;
   max-height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 #radio1:checked ~ #slider .slide_one {
@@ -53,7 +82,24 @@
 .slides_box {
   display: flex;
   justify-content: space-between;
-  border: 1px solid red;
+  /* margin-top: 3.125rem; */
+  padding: 2rem;
+}
+
+.slider_text {
+  width: 30rem;
+  overflow: hidden;
+}
+
+.slider_text p {
+  width: 30rem;
+  /* margin-left: 3rem; */
+  font-size: 1.875rem;
+}
+
+.slides_text {
+  width: 400%;
+  display: flex;
 }
 
 .btn {
@@ -70,20 +116,6 @@
   background-color: blanchedalmond;
 }
 
-.slider_text {
-  width: 6.25rem;
-  overflow: hidden;
-}
-
-.slider_text p {
-  width: 6.25rem;
-}
-
-.slides_text {
-  width: 400%;
-  display: flex;
-}
-
 #radio1checked ~ #box .text_one {
   margin-left: 0;
 }
@@ -98,4 +130,19 @@
 
 #radio4:checked ~ #box .text_one {
   margin-left: -75%;
+}
+
+@media (max-width: 835px) {
+  .slides_box {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .slider_text {
+    text-align: center;
+    margin-top: 0.94rem;
+  }
+  .slides_text p {
+    font-size: 1.2rem;
+  }
 }
