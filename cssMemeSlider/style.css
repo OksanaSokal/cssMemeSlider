@@ -10,38 +10,35 @@ body {
 }
 
 .container {
-  /* max-width: 68.75rem; */
   max-width: 80%;
   max-height: 90vh;
-  /* max-height: 50rem; */
-  background-color: rgba(218, 223, 225, 0.7);
-  margin: 0 auto;
-  /* margin-top: 4vh; */
-  margin-bottom: 4vh;
+  margin: 4vh auto 4vh;
+  padding-top: 4vh;
+  background-color: rgb(159, 162, 164);
   border-radius: 0.625rem;
+}
+
+.wrapper {
+  max-width: 70%;
+  margin: 0 auto;
 }
 
 input {
   display: none;
 }
+
 .slider {
-  /* max-width: 37.5rem; */
-  max-width: 60%;
   max-height: 70vh;
-  /* max-height: 37.5rem; */
   overflow: hidden;
   margin: 0 auto;
-  /* padding-top: 3%; */
   background-color: white;
   border-radius: 0.75rem;
-  margin-top: 1.25rem;
 }
 
 .slides {
   display: flex;
   width: 400%;
   max-height: 70vh;
-  /* max-height: 37.5rem; */
 }
 
 .slide {
@@ -77,24 +74,24 @@ input {
 
 .slides_buttons {
   display: flex;
+  margin-right: -0.625rem;
 }
 
 .slides_box {
   display: flex;
   justify-content: space-between;
-  /* margin-top: 3.125rem; */
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .slider_text {
-  width: 30rem;
+  width: 21.875rem;
   overflow: hidden;
 }
 
 .slider_text p {
-  width: 30rem;
-  /* margin-left: 3rem; */
+  width: 21.875rem;
   font-size: 1.875rem;
+  transition: all 0.6s ease;
 }
 
 .slides_text {
@@ -105,18 +102,39 @@ input {
 .btn {
   background-color: rgb(94, 94, 82);
   border-radius: 50%;
-  width: 1rem;
-  height: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
   cursor: pointer;
   transition: all 0.4s ease;
-  margin-right: 0.6rem;
+  /* margin-right: 0.1rem; */
+  border: 0.625rem solid rgb(159, 162, 164);
 }
 
 .btn:hover {
   background-color: blanchedalmond;
 }
 
-#radio1checked ~ #box .text_one {
+.btn:active {
+  transform: scale(1.5);
+}
+
+#radio1:checked ~ #box .btn1 {
+  background-color: rgb(52, 17, 62);
+}
+
+#radio2:checked ~ #box .btn2 {
+  background-color: rgb(52, 17, 62);
+}
+
+#radio3:checked ~ #box .btn3 {
+  background-color: rgb(52, 17, 62);
+}
+
+#radio4:checked ~ #box .btn4 {
+  background-color: rgb(52, 17, 62);
+}
+
+#radio1:checked ~ #box .text_one {
   margin-left: 0;
 }
 
@@ -132,15 +150,37 @@ input {
   margin-left: -75%;
 }
 
+@media (max-width: 1024px) {
+  .slides_text p {
+    font-size: 1.125rem;
+    justify-self: center;
+  }
+  .btn {
+    width: 1rem;
+    height: 1rem;
+    border: 0.375rem solid rgb(159, 162, 164);
+  }
+
+  .slides_box {
+    align-items: center;
+  }
+}
+
 @media (max-width: 835px) {
+  .container {
+    padding-top: 2vh;
+  }
   .slides_box {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+    padding: 1rem 0;
   }
   .slider_text {
-    text-align: center;
-    margin-top: 0.94rem;
+    text-align: start;
+    margin-top: 0.625rem;
+    align-self: flex-start;
+    justify-self: center;
   }
   .slides_text p {
     font-size: 1.2rem;
